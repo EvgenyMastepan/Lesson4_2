@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-    var userName: String = "Adventurer"
 
 struct ContentView: View {
+    let mockData = Physician.mockData()
     
     var body: some View {
         
@@ -38,7 +38,7 @@ struct ContentView: View {
                 }
                 Text("Hello "/*, userName*/)
                     .font(.system(size: 16, weight: .semibold))
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 10)
                 Text("Find your specialist")
                     .font(.system(size: 32, weight: .semibold))
                     .padding(.vertical, 10)
@@ -70,50 +70,10 @@ struct ContentView: View {
             // Нижняя половина.
             VStack{
                 ScrollView(){
-                    HStack{
-                        Image("1_1")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 82, height: 82, alignment: .leading)
-                            .clipped()
-                            .cornerRadius(20)
-                            .padding(5)
-//                        Spacer()
-                        VStack(alignment: .leading, spacing: 5){
-                            Text("User name")
-                            Text("Lorem ipsum")
-                                .font(.system(size: 14))
-                                .foregroundStyle(.gray)
-                            HStack{
-                                Image(systemName: "clock")
-                                    .foregroundStyle(.teal)
-                                Text("10.40 am - 2.40 pm")
-                                    .font(.system(size: 14))
-                                    .foregroundStyle(.gray)
-                            }
-                            HStack{
-                                Text("$10.50")
-                                    .font(.system(size: 14))
-                                    .foregroundStyle(.gray)
-                                Spacer()
-                                Button{
-                                    //Кнопка назначения приёма.
-                                } label: {
-                                    Text("Appointment")
-                                        .font(.system(size: 14))
-                                        .foregroundStyle(.white)
-                                }
-                                .background(.teal)
-                                
-                            }
-                        }
+                    
+                    ForEach(mockData) { item in
+                        PhysicianItem(item: item)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 5)
-                    .padding(.vertical, 10)
-                    .background(.white)
-                    .clipped()
-                    .cornerRadius(20)
                 }
             }
             // Конец нижней половины
@@ -125,10 +85,6 @@ struct ContentView: View {
         
     }
 }
-
-
-
-
 
 
 
