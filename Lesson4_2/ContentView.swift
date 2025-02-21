@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     let mockData = Physician.mockData()
+    let userName = "Adventurer"
     
     var body: some View {
         
@@ -36,21 +37,56 @@ struct ContentView: View {
                     }
                     
                 }
-                Text("Hello "/*, userName*/)
+                Text("Hello " + userName)
                     .font(.system(size: 16, weight: .semibold))
                     .padding(.vertical, 10)
                 Text("Find your specialist")
                     .font(.system(size: 32, weight: .semibold))
                     .padding(.vertical, 10)
-                HStack(alignment: .center, spacing: 10){
-                    Text("Place")
-                        .foregroundStyle(.blue)
+                HStack(alignment: .center){
+                    VStack(spacing: 10){
+                        Image(systemName: "location.north.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 42, height: 42, alignment: .center)
+                            .foregroundStyle(.white)
+                        Text("Place")
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 120, height: 120)
+                    .background(Color.blue.opacity(0.6))
+                    .clipped()
+                    .cornerRadius(20)
+                    
                     Spacer()
-                    Text("Phone")
-                        .foregroundStyle(.teal)
+                    VStack(spacing: 10){
+                        Image(systemName: "phone.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 42, height: 42, alignment: .center)
+                            .foregroundStyle(.white)
+                        Text("Place")
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 120, height: 120)
+                    .background(Color.teal.opacity(0.6))
+                    .clipped()
+                    .cornerRadius(20)
+                    
                     Spacer()
-                    Text("User")
-                        .foregroundStyle(.pink)
+                    VStack(spacing: 10){
+                        Image(systemName: "person.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 42, height: 42, alignment: .center)
+                            .foregroundStyle(.white)
+                        Text("Place")
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 120, height: 120)
+                    .background(Color.pink.opacity(0.5))
+                    .clipped()
+                    .cornerRadius(20)
                 }
                 .padding(.vertical, 20)
                 HStack(alignment: .center){
@@ -58,7 +94,7 @@ struct ContentView: View {
                         .font(.system(size: 25, weight: .semibold))
                     Spacer()
                     Button{
-                     // See all.
+                     // Кнопка "А можно всех посмотреть?"
                     } label: {
                     Text("See all")
                         .font(.system(size: 14))
@@ -88,9 +124,10 @@ struct ContentView: View {
 
 
 
-//phone.fill  person.fill
+//
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+.previewInterfaceOrientation(.portrait)
     }
 }

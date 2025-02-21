@@ -57,8 +57,8 @@
 			children = (
 				753F15E82D6866E80031A722 /* Lesson4_2App.swift */,
 				7500E9382D68D6A400E787E7 /* Data.swift */,
-				753F15EA2D6866E80031A722 /* ContentView.swift */,
 				7500E9362D68D56400E787E7 /* PhysicianItem.swift */,
+				753F15EA2D6866E80031A722 /* ContentView.swift */,
 				753F15EC2D6866F30031A722 /* Assets.xcassets */,
 				753F15EE2D6866F30031A722 /* Preview Content */,
 			);
