@@ -65,7 +65,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 42, height: 42, alignment: .center)
                             .foregroundStyle(.white)
-                        Text("Place")
+                        Text("Phone")
                             .foregroundStyle(.white)
                     }
                     .frame(width: 120, height: 120)
@@ -80,7 +80,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 42, height: 42, alignment: .center)
                             .foregroundStyle(.white)
-                        Text("Place")
+                        Text("User")
                             .foregroundStyle(.white)
                     }
                     .frame(width: 120, height: 120)
